@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Red T-shirt",
+      "price": 25.00,
+      "image": "images/Capture7.PNG"
+    },
+    {
+      "id": 2,
+      "name": "Blue T-shirt",
+      "price": 25.00,
+      "image": "images/Capture5.PNG"
+    },
+    {
+      "id": 3,
+      "name": "Yellow T-shirt",
+      "price": 25.00,
+      "image": "images/Capture3.PNG"
+    }
+  ]
+  
