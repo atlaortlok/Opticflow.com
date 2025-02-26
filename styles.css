@@ -19,18 +19,19 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adds a little shadow for effect */
 }
 
 /* Fix for h1 Alignment */
 h1 {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 80px; /* Moves the heading below the fixed header */
 }
 
 /* Centered View Cart Button */
 .view-cart-container {
     text-align: center;
-    margin-top: 120px; /* Adjusted to place it above the middle product */
+    margin-top: 100px; /* Places the button centered above the middle product */
 }
 
 .view-cart {
@@ -43,6 +44,7 @@ h1 {
     border-radius: 5px;
     font-size: 16px;
     display: inline-block;
+    margin-top: 20px;
 }
 
 .view-cart:hover {
@@ -53,7 +55,7 @@ h1 {
 .product-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 40px; /* More spacing between products */
     flex-wrap: wrap;
     margin-top: 20px;
 }
@@ -76,9 +78,9 @@ h1 {
     border-radius: 10px;
 }
 
-/* Product Buttons (Restored to Original Size & Color) */
+/* Product Buttons (Uniform Size and Color) */
 .product button {
-    background-color: #007bff; /* Restore original button color */
+    background-color: #007bff; /* Blue */
     color: white;
     border: none;
     padding: 12px;
@@ -100,6 +102,7 @@ h1 {
     justify-content: center;
 }
 
+/* Make the Cart Buttons the Same Size */
 .cart-actions button {
     flex: 1;
     padding: 14px;
@@ -107,27 +110,38 @@ h1 {
     width: 220px;
 }
 
-/* Consistent Colors for Cart Buttons */
+/* Specific Button Colors for Cart Buttons */
 .clear-cart {
-    background-color: #dc3545;
+    background-color: #dc3545; /* Red */
+    color: white;
 }
 
 .clear-cart:hover {
-    background-color: #c82333;
+    background-color: #c82333; /* Darker Red */
 }
 
 .checkout {
-    background-color: #28a745;
+    background-color: #28a745; /* Green */
+    color: white;
 }
 
 .checkout:hover {
-    background-color: #218838;
+    background-color: #218838; /* Darker Green */
 }
 
 .stripe-checkout {
-    background-color: #ff6600;
+    background-color: #ff6600; /* Orange */
+    color: white;
 }
 
 .stripe-checkout:hover {
-    background-color: #cc5200;
+    background-color: #cc5200; /* Darker Orange */
+}
+
+/* Cart Action Button Hover Effects */
+.clear-cart:hover,
+.checkout:hover,
+.stripe-checkout:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
