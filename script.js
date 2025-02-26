@@ -9,9 +9,9 @@ const formatter = new Intl.NumberFormat('en-GB', {
 });
 
 const products = [
-    { name: "Red T-shirt", price: 25, Image },
-    { name: "Blue T-shirt", price: 25, Image },
-    { name: "Trendy Sneakers", price: 70, image: "sneakers.jpg" }
+    { name: "Red T-shirt", price: 25, },
+    { name: "Blue T-shirt", price: 25, },
+    { name: "Yellow T-shirt", price: 25, }
 ];
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
