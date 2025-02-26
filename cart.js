@@ -1,54 +1,81 @@
-// Load Cart from Local Storage
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+document.addEventListener("DOMContentLoaded", function () {
+    displayCart();
+});
 
-// Function to Display Cart Items
+// Add to Cart Function
+function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    let product = cart.find(item => item.name === name);
+    if (product) {
+        product.quantity += 1;
+    } else {
+        cart.push({ name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(name + " has been added to the cart!");
+}
+
+// Display Cart Items
 function displayCart() {
-    const cartContainer = document.getElementById("cart-items");
-    const totalPriceElement = document.getElementById("total-price");
-    cartContainer.innerHTML = ""; // Clear current cart items
-
-    let totalPrice = 0;
-
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartItems = document.getElementById("cart-items");
+    let totalPrice = document.getElementById("total-price");
+    cartItems.innerHTML = "";
+    
+    let total = 0;
+    
     cart.forEach((item, index) => {
-        const cartItem = document.createElement("div");
-        cartItem.classList.add("cart-item");
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
 
+        let cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
         cartItem.innerHTML = `
             <img src="${item.image}" alt="${item.name}">
-            <h2>${item.name}</h2>
-            <p>£${item.price.toFixed(2)}</p>
-            <p>Quantity: ${item.quantity}</p>
-            <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+            <p>${item.name} - £${item.price.toFixed(2)} x ${item.quantity}</p>
+            <button onclick="removeFromCart(${index})">Remove</button>
         `;
-
-        cartContainer.appendChild(cartItem);
-        totalPrice += item.price * item.quantity;
+        cartItems.appendChild(cartItem);
     });
 
-    totalPriceElement.textContent = `Total: £${totalPrice.toFixed(2)}`;
+    totalPrice.innerText = "Total: £" + total.toFixed(2);
 }
 
-// Function to Remove Individual Items
+// Remove Item from Cart
 function removeFromCart(index) {
-    cart.splice(index, 1); // Remove item at index
-    localStorage.setItem("cart", JSON.stringify(cart)); // Update storage
-    displayCart(); // Refresh cart
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
 }
 
-// Function to Clear Cart
+// Clear Cart
 function clearCart() {
-    cart = []; // Empty the cart array
-    localStorage.removeItem("cart"); // Clear from localStorage
-    displayCart(); // Refresh the cart display
+    localStorage.removeItem("cart");
+    displayCart();
 }
 
-// Event Listener for Clear Cart Button
-document.addEventListener("DOMContentLoaded", () => {
-    displayCart(); // Load cart when page loads
+// Stripe Checkout
+document.getElementById("checkout-btn")?.addEventListener("click", async () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
 
-    // Attach event listener to the Clear Cart button
-    const clearCartBtn = document.getElementById("clear-cart");
-    if (clearCartBtn) {
-        clearCartBtn.addEventListener("click", clearCart);
+    const response = await fetch("http://localhost:5000/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: cart }),
+    });
+
+    const data = await response.json();
+    if (data.url) {
+        window.location.href = data.url;
+    } else {
+        alert("Error: " + data.error);
     }
 });

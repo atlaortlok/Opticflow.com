@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opticflow</title>
+    <title>Opticflow Apparell</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    
-        <header>
-            <h1>Opticflow</h1>
-            <a href="cart.html"><button>View Cart</button></a>
-        </header>
-        
-   
+    <h1>Opticflow</h1>
+    <div class="product-container">
+        <!-- Red T-shirt -->
+        <div class="product">
+            <img src="Products/Capture7.PNG" alt="Red T-shirt">
+            <h2>Red T-shirt</h2>
+            <p>Price: £25.00</p>
+            <button onclick="addToCart('Red T-shirt', 25.00, 'Products/Capture7.PNG')">Add to Cart</button>
+        </div>
 
-    <section class="products">
-        <h2>Products</h2>
-        <div id="product-list"></div>
-    </section>
+        <!-- Blue T-shirt -->
+        <div class="product">
+            <img src="Products/Capture5.PNG" alt="Blue T-shirt">
+            <h2>Blue T-shirt</h2>
+            <p>Price: £25.00</p>
+            <button onclick="addToCart('Blue T-shirt', 25.00, 'Products/Capture5.PNG')">Add to Cart</button>
+        </div>
 
-    <script src="script.js"></script>
+        <!-- Yellow T-shirt -->
+        <div class="product">
+            <img src="Products/Capture3.PNG" alt="Yellow T-shirt">
+            <h2>Yellow T-shirt</h2>
+            <p>Price: £25.00</p>
+            <button onclick="addToCart('Yellow T-shirt', 25.00, 'Products/Capture3.PNG')">Add to Cart</button>
+        </div>
+    </div>
+
+    <a href="cart.html"><button class="view-cart">View Cart</button></a>
+
+    <script src="cart.js"></script>
 </body>
 </html>
 
-    
