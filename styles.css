@@ -4,13 +4,12 @@ body {
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
-    text-align: center; /* Centering elements */
 }
 
 /* Gray Bar at the Top */
 .header {
     background-color: #ccc;
-    padding: 15px;
+    padding: 20px; /* Increased padding for visibility */
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -24,28 +23,30 @@ body {
 /* Fix for h1 Alignment */
 h1 {
     text-align: center;
-    margin-top: 80px; /* Pushes it down below the fixed header */
+    margin-top: 100px; /* Ensures it's not hidden under the header */
 }
 
 /* Product Grid */
 .product-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px; /* Added more spacing between products */
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
+/* Product Box */
 .product {
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 10px;
-    width: 200px;
+    width: 250px; /* Increased width for better spacing */
     text-align: center;
     background: white;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Product Image */
 .product img {
     width: 100%;
     height: auto;
@@ -54,7 +55,7 @@ h1 {
 
 /* Buttons - Same Size and Color */
 button {
-    background-color: #007bff; /* Consistent Blue */
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 12px;
@@ -71,7 +72,7 @@ button:hover {
 
 /* Cart Page */
 .cart-container {
-    width: 60%;
+    width: 70%;
     margin: auto;
     background: white;
     padding: 20px;
@@ -106,12 +107,12 @@ button:hover {
     flex: 1;
     padding: 14px;
     font-size: 18px;
-    width: 220px; /* Making them equal width */
+    width: 220px;
 }
 
 /* Consistent Colors for Cart Buttons */
 .clear-cart {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545;
 }
 
 .clear-cart:hover {
@@ -119,7 +120,7 @@ button:hover {
 }
 
 .checkout {
-    background-color: #28a745; /* Green */
+    background-color: #28a745;
 }
 
 .checkout:hover {
@@ -127,7 +128,7 @@ button:hover {
 }
 
 .stripe-checkout {
-    background-color: #ff6600; /* Orange */
+    background-color: #ff6600;
 }
 
 .stripe-checkout:hover {
