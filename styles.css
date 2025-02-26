@@ -25,13 +25,13 @@ body {
 /* Fix for h1 Alignment */
 h1 {
     text-align: center;
-    margin-top: 80px; /* Moves the heading below the fixed header */
+    margin-top: 100px; /* Moves the heading below the fixed header */
 }
 
 /* Centered View Cart Button */
 .view-cart-container {
     text-align: center;
-    margin-top: 100px; /* Places the button centered above the middle product */
+    margin-top: 120px; /* Places the button centered above the middle product */
 }
 
 .view-cart {
@@ -44,7 +44,6 @@ h1 {
     border-radius: 5px;
     font-size: 16px;
     display: inline-block;
-    margin-top: 20px;
 }
 
 .view-cart:hover {
