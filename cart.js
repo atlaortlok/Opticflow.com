@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Add to Cart Function
 function addToCart(name, price, image) {
+    if (!name || !price || !image) {
+        console.error("Invalid product data:", { name, price, image });
+        alert("Error: Product information is missing!");
+        return;
+    }
+
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     
     let product = cart.find(item => item.name === name);
@@ -27,6 +33,11 @@ function displayCart() {
     let total = 0;
     
     cart.forEach((item, index) => {
+        if (!item.name || !item.price || !item.image) {
+            console.error("Corrupted cart item:", item);
+            return;
+        }
+
         let itemTotal = item.price * item.quantity;
         total += itemTotal;
 
