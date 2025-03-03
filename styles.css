@@ -37,6 +37,9 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .product:hover {
@@ -58,21 +61,22 @@ button {
     cursor: pointer;
     font-size: 18px;
     margin-top: 10px;
+    text-align: center;
 }
 
 button:hover {
     background-color: #555;
 }
 
-#view-cart {
-    display: block;
-    margin: 20px auto;
-    width: 250px;
-    text-align: center;
-}
-
 .cart-buttons {
     text-align: center;
+    margin: 20px 0;
+}
+
+#view-cart {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 250px;
 }
 
 #clear-cart, #checkout, #stripe-checkout {
@@ -100,4 +104,8 @@ button:hover {
     height: auto;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+.cart-item p {
+    margin: 5px 0;
 }
