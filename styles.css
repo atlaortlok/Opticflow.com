@@ -11,24 +11,25 @@ header {
     text-align: center;
     padding: 20px 0;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 h1 {
     margin: 0;
-    font-size: 2em;
     text-align: center;
+    font-size: 2em;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    justify-items: center;
     padding: 20px;
+    justify-items: center;
+    text-align: center;
 }
 
 .product {
-    text-align: center;
     padding: 20px;
     border: 1px solid #ccc;
     background-color: white;
@@ -55,51 +56,36 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 10px;
     font-size: 18px;
-    text-align: center;
-    display: block;
-    margin: 10px auto;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #555;
 }
 
-.cart-buttons {
-    text-align: center;
-    margin: 20px 0;
-}
-
 #view-cart {
     display: block;
-    margin: 0 auto 20px auto;
-    width: 220px;
+    margin: 20px auto;
+    width: 250px;
+    text-align: center;
+}
+
+.cart-buttons {
+    text-align: center;
 }
 
 #clear-cart, #checkout, #stripe-checkout {
     display: inline-block;
-    width: 220px;
+    width: 250px;
     margin: 10px 5px;
-}
-
-.cart-item img {
-    width: 100px;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.cart-item p {
-    margin: 5px 0;
 }
 
 .dark-grey-bar {
     background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
     width: 100%;
+    padding: 20px 0;
+    text-align: center;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -109,28 +95,9 @@ button:hover {
     display: none;
 }
 
-#cart-container {
-    text-align: center;
-    margin: 20px auto;
-}
-
-#cart-total {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-button.add-to-cart {
-    width: 220px;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 18px;
-}
-
-button.add-to-cart:hover {
-    background-color: #555;
+.cart-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
