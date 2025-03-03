@@ -36,6 +36,8 @@ function updateCart() {
 // Function to add an item to the cart
 function addToCart(product) {
     cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart)); // Store the cart in localStorage
+  alert(`${productName} has been added to your cart!`);
     updateCart();
 }
 
@@ -59,7 +61,7 @@ function viewCart() {
 // Stripe Checkout (integration)
 document.getElementById("stripe-checkout").addEventListener("click", function() {
     // Make sure your backend creates a checkout session and returns the session ID
-    fetch("/create-checkout-session", {
+    fetch("http://localhost:3000/create-checkout-session", {
         method: "POST",
     })
     .then(function(response) {

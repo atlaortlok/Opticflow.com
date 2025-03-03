@@ -1,4 +1,4 @@
-const stripe = Stripe("your_publishable_key_here"); // Replace with your Stripe public key
+const stripe = Stripe("pk_test_51QwHZJIyiyXVGNwdrhjQqIZpj8q6iE88NSb9exxYePcuch2hyo4oDSAaSlwnvHr299CvwN9YLa4wqEscCDX59iZW00cNePxBnL"); // Replace with your Stripe public key
 
 document.addEventListener("DOMContentLoaded", () => {
     const paymentTotal = document.getElementById("payment-total");
