@@ -59,8 +59,15 @@ function viewCart() {
 }
 
 // Stripe Checkout (integration)
-document.getElementById("stripe-checkout").addEventListener("click", function() {
-    // Make sure your backend creates a checkout session and returns the session ID
+button.addEventListener('click', function() {
+    console.log('Button clicked!'); // Check if this logs
+    const productId = this.dataset.id;
+    const productName = this.dataset.name;
+    const productPrice = parseFloat(this.dataset.price);
+  
+    addToCart(productId, productName, productPrice);
+  });
+  
     fetch("http://localhost:3000/create-checkout-session", {
         method: "POST",
     })
@@ -79,7 +86,7 @@ document.getElementById("stripe-checkout").addEventListener("click", function() 
     .catch(function(error) {
         console.error("Error redirecting to checkout:", error);
     });
-});
+;
 
 // Initialize the cart on page load (if items are stored in localStorage, for example)
 document.addEventListener("DOMContentLoaded", function() {
