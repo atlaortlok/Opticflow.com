@@ -16,6 +16,7 @@ header {
 h1 {
     margin: 0;
     font-size: 2em;
+    text-align: center;
 }
 
 .container {
@@ -117,3 +118,18 @@ button:hover {
     margin: 20px 0;
 }
 
+button.add-to-cart {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+button.add-to-cart:hover {
+    background-color: #555;
+}
