@@ -22,11 +22,11 @@ h1 {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     padding: 20px;
-    justify-items: center;
     text-align: center;
+    justify-items: center;
 }
 
 .product {
@@ -61,7 +61,6 @@ button {
     cursor: pointer;
     font-size: 18px;
     margin-top: 10px;
-    text-align: center;
 }
 
 button:hover {
@@ -108,4 +107,10 @@ button:hover {
 
 .cart-item p {
     margin: 5px 0;
+}
+
+button.add-to-cart {
+    width: 220px;
+    text-align: center;
+    display: block;
 }
