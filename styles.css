@@ -49,14 +49,17 @@ h1 {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: #333;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
 }
 
 button:hover {
@@ -71,15 +74,13 @@ button:hover {
 #view-cart {
     display: block;
     margin: 0 auto 20px auto;
-    width: 200px;
-    text-align: center;
+    width: 220px;
 }
 
 #clear-cart, #checkout, #stripe-checkout {
     display: inline-block;
-    width: 200px;
+    width: 220px;
     margin: 10px 5px;
-    text-align: center;
 }
 
 .cart-item img {
@@ -119,15 +120,15 @@ button:hover {
 }
 
 button.add-to-cart {
-    width: 200px;
+    width: 220px;
     background-color: #333;
     color: white;
     text-align: center;
     border: none;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 button.add-to-cart:hover {
